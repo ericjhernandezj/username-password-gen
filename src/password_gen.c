@@ -10,13 +10,13 @@ char pickRandomSpecial();
 
 void password_gen(void)
 {
-    short int passwordLength;
-    char includeSpecials;
-
     puts("--- Password Generator ---\n");
 
     printf("Password length (by default is 8): ");
+    short int passwordLength;
     scanf("%hu%*c", &passwordLength);
+
+    char finalPassword[passwordLength];
 
     if (passwordLength < 8)
     {
@@ -28,6 +28,7 @@ void password_gen(void)
     }
 
     printf("Will the password include special characters? (y)es/(n)o: ");
+    char includeSpecials;
     scanf("%c", &includeSpecials);
 
     if (includeSpecials == 'y')
