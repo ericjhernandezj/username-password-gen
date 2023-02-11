@@ -10,20 +10,24 @@ char pickRandomSpecial();
 
 void password_gen(void)
 {
-    puts("--- Password Generator ---\n");
-
     short int passwordLength;
+    char includeSpecials;
+
+    puts("--- Password Generator ---\n");
 
     printf("Password length (by default is 8): ");
     scanf("%hu%*c", &passwordLength);
 
-    if (passwordLength <= 7 || passwordLength >= 100)
+    if (passwordLength < 8)
     {
-        puts("Invalid size entered, the password will be 8 characters.\n");
+        puts("Not supported, password size will be 8 characters.");
         passwordLength = 8;
+    } else if (passwordLength > 99)
+    {
+        puts("Not supported, password size will be 99 characters.");
     }
-
-    char includeSpecials;
+    
+    printf("password length: %hu\n", passwordLength);
 
     printf("Will the password include special characters? (y)es/(n)o: ");
     scanf("%c", &includeSpecials);
