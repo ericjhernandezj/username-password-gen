@@ -26,8 +26,6 @@ void password_gen(void)
     {
         puts("Not supported, password size will be 99 characters.");
     }
-    
-    printf("password length: %hu\n", passwordLength);
 
     printf("Will the password include special characters? (y)es/(n)o: ");
     scanf("%c", &includeSpecials);
@@ -40,7 +38,6 @@ void password_gen(void)
         includeSpecials = 'n';
     } else
     {
-        puts("ERROR!");
         puts("Invalid input, the password will not contain special characters.");
         includeSpecials = 'n';
     }
